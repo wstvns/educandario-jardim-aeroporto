@@ -1,0 +1,24 @@
+# dependências
+node_modules/
+
+# builds
+dist/
+build/
+
+# arquivos de lock (caso não use todos)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# arquivos temporários/sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# configurações locais do editor
+.vscode/
+.idea/
+
+# arquivos de ambiente
+.env
+.env.*
