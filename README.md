@@ -172,10 +172,6 @@ As cores principais podem ser alteradas no arquivo `src/App.css`:
    - Verifique se todas as dependências estão instaladas
    - Execute `npm install` ou `npm install --legacy-peer-dep` caso o `npm install` não funcione
 
-## 📄 Licença
-
-Este projeto foi desenvolvido especificamente para o Educandário Jardim Aeroporto. Todos os direitos reservados.
-
 ## 🤝 Suporte
 
 Para suporte técnico ou dúvidas sobre o site, entre em contato através dos canais oficiais da escola.
