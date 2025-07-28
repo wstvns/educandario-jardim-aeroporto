@@ -91,11 +91,25 @@ cd educandario-jardim-aeroporto
 ```
 
 2. **Instale as dependências**
+
+Se usar npm:
+
 ```bash
 npm install
-# ou
+```
+
+Se usar pnpm:
+
+```bash
 pnpm install
 ```
+
+> ⚠️ **Importante:** Na primeira vez que rodar `pnpm install`, pode ser necessário aprovar scripts de build de alguns pacotes:
+>
+> ```bash
+> pnpm approve-builds
+> ```
+> Escolha os pacotes que deseja aprovar para executar scripts de build (possivelmente serão o `esbuild` e `@tailwindcss/oxide`).
 
 3. **Execute o servidor de desenvolvimento**
 ```bash
@@ -105,7 +119,7 @@ pnpm run dev
 ```
 
 4. **Acesse o site via**
-[http://localhost:5173](http://localhost:5173) 
+[http://localhost:5173](http://localhost:5173)
 
 ## 📦 Build para Produção
 
@@ -148,7 +162,7 @@ Os arquivos otimizados serão gerados na pasta `dist/`.
 ## 🔧 Personalização
 
 ### Cores
-As cores principais podem ser alteradas no arquivo `src/App.css`:
+As cores principais podem ser alteradas no arquivo `src/index.css`:
 - Rosa: `#FFB6C1`
 - Azul: `#B0E0E6` 
 - Amarelo: `#FFFACD`
@@ -170,7 +184,7 @@ As cores principais podem ser alteradas no arquivo `src/App.css`:
 
 1. **Erro de build**
    - Verifique se todas as dependências estão instaladas
-   - Execute `npm install` ou `npm install --legacy-peer-dep` caso o `npm install` não funcione
+   - Execute `npm install` ou `npm install --legacy-peer-deps` caso o `npm install` não funcione
 
 ## 🤝 Suporte
 
