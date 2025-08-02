@@ -64,7 +64,7 @@ const Header = () => {
             </div>
             <div>
               <h1 className="text-sm font-medium text-gray-800 dark:text-white">Educandário</h1>
-              <p className="text-sm text-gray-600 dark:text-blue-400 font-medium">Jardim Aeroporto</p>
+              <p className="text-sm text-gray-600 dark:text-white font-medium">Jardim Aeroporto</p>
             </div>
           </Link>
 
