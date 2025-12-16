@@ -37,17 +37,17 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: 'Tecka Grossa',
+      name: 'Maria Ferreira',
       text: 'Meu filho ama a escola! O cuidado e carinho da equipe são excepcionais.',
       rating: 5,
     },
     {
-      name: 'Maurício Pizza',
+      name: 'Jair Silva',
       text: 'Excelente estrutura e metodologia. Recomendo para todos os pais!',
       rating: 5,
     },
     {
-      name: 'Juliana C. Pizza',
+      name: 'Amanda dos Santos',
       text: 'O desenvolvimento do meu filho foi incrível desde que começou aqui.',
       rating: 5,
     },
