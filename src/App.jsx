@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import QuemSomos from './pages/QuemSomos';
@@ -38,6 +39,7 @@ function App() {
           <Route path="/contato" element={<Contato />} />
         </Routes>
       </Layout>
+      <Analytics />
     </Router>
   );
 }
