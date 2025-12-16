@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Instagram, MessageCircle, GraduationCap } from 'lucide-react';
+import { Menu, X, Phone, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -22,11 +30,18 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50">
-      <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-2">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+        isScrolled 
+          ? 'bg-white/20 backdrop-blur-xl border-b border-white/30 shadow-sm' 
+          : 'bg-transparent border-b border-transparent'
+      }`}
+    >
+      {/* Faixa superior*/}
+      <div className="bg-blue-600/90 backdrop-blur-sm text-white py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center text-sm">
-            <div className="flex items-center space-x-4">
+          <div className="flex justify-between items-center text-xs sm:text-sm">
+            <div className="flex items-center gap-4 font-bold">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
                 <a href="tel:+55659935474200" className="hover:text-blue-200 transition-colors">
@@ -34,21 +49,11 @@ const Header = () => {
                 </a>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              <a 
-                href="https://www.instagram.com/educandariojardimaeroport/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-200 transition-colors"
-              >
+            <div className="flex items-center gap-4">
+              <a href="https://www.instagram.com/educandariojardimaeroport/" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a 
-                href="https://api.whatsapp.com/message/SREIOJFRZZA2O1?autoload=1&app_absent=0"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-200 transition-colors"
-              >
+              <a href="https://api.whatsapp.com/message/SREIOJFRZZA2O1?autoload=1&app_absent=0" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform">
                 <MessageCircle className="h-4 w-4" />
               </a>
             </div>
@@ -56,27 +61,42 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Navegação Principal */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex items-center space-x-0">
-            <div className="w-28 h-28 flex items-center justify-center">
-                <img src="/favicon.png" alt="Logo" className="w-28 h-28 object-contain" />
+        <div className="flex justify-between items-center h-20 lg:h-24">
+          
+          {/* logo centraliza*/}
+          <Link to="/" className="flex items-center group">
+            {/* Logo e voltinha */}
+            <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 flex items-center justify-center transition-transform duration-500 group-hover:rotate-8">
+              <img 
+                src="/favicon.png" 
+                alt="Logo" 
+                className="w-full h-full object-contain drop-shadow-md" 
+              />
             </div>
-            <div>
-              <h1 className="text-sm font-medium text-gray-800 dark:text-white">Educandário</h1>
-              <p className="text-sm text-gray-600 dark:text-white font-medium">Jardim Aeroporto</p>
+            
+            {/* deixar 1 linha o segundo txt */}
+            <div className="flex flex-col items-center justify-center text-center ml-3 mr-10 lg:mr-8 min-w-max">
+              <h1 className="text-xs sm:text-base font-black !text-black tracking-tight uppercase leading-none">
+                Educandário
+              </h1>
+              <p className="text-[9px] sm:text-[10px] font-black !text-black uppercase tracking-[0.1em] leading-none mt-1 whitespace-nowrap">
+                Jardim Aeroporto
+              </p>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex space-x-0 space-y-0">
+          {/* links */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-[11px] xl:text-xs font-black uppercase tracking-tighter transition-all duration-300 ${
                   isActive(item.href)
-                    ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900 hover:text-blue-700 dark:hover:text-blue-300'
+                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-200'
+                    : 'text-slate-800 hover:text-blue-600 hover:bg-white/60'
                 }`}
               >
                 {item.name}
@@ -84,21 +104,21 @@ const Header = () => {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center space-x-3">
-            <ThemeToggle />
+          {/* button de matricula com detalhes */}
+          <div className="hidden lg:flex items-center">
             <Button 
               asChild
-              className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full px-6"
+              className="bg-red-500 hover:bg-red-600 text-white rounded-full px-6 py-5 text-xs font-black uppercase shadow-lg shadow-red-500/20 transition-all hover:scale-105 active:scale-95 border-b-4 border-red-700"
             >
-              <Link to="/matriculas">Faça sua Matrícula</Link>
+              <Link to="/matriculas">Matrícula</Link>
             </Button>
           </div>
 
-          <div className="lg:hidden flex items-center space-x-2">
-            <ThemeToggle />
+          {/* menu mobile */}
+          <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900"
+              className="p-2 rounded-xl bg-white/40 backdrop-blur-md text-slate-900 hover:text-blue-600 transition-all"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -106,31 +126,25 @@ const Header = () => {
         </div>
       </div>
 
+      {/* menu mobile*/}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-700">
-          <div className="px-4 py-2 space-y-1">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-2xl border-b border-gray-200 shadow-2xl animate-in slide-in-from-top duration-300">
+          <div className="px-6 py-8 space-y-3">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-3 py-2 rounded-lg text-base font-medium transition-colors ${
-                  isActive(item.href)
-                    ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900 hover:text-blue-700 dark:hover:text-blue-300'
+                className={`block px-4 py-3 rounded-2xl text-base font-black transition-all ${
+                  isActive(item.href) ? 'bg-blue-600 text-white' : 'text-slate-800 hover:bg-blue-50'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <div className="mt-4 px-3">
-              <Button 
-                asChild
-                className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-full"
-              >
-                <Link to="/matriculas" onClick={() => setIsMenuOpen(false)}>
-                  Faça sua Matrícula
-                </Link>
+            <div className="pt-4">
+              <Button asChild className="w-full bg-red-500 text-white rounded-2xl py-6 font-black uppercase shadow-lg border-b-4 border-red-700">
+                <Link to="/matriculas" onClick={() => setIsMenuOpen(false)}>Fazer Matrícula</Link>
               </Button>
             </div>
           </div>
@@ -141,4 +155,3 @@ const Header = () => {
 };
 
 export default Header;
-

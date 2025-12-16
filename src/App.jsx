@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from '@/components/theme/theme-provider';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import QuemSomos from './pages/QuemSomos';
@@ -25,23 +24,21 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="educandario-theme">
-      <Router>
-        <ScrollToTop />
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/quem-somos" element={<QuemSomos />} />
-            <Route path="/proposta-pedagogica" element={<PropostaPedagogica />} />
-            <Route path="/turmas-horarios" element={<TurmasHorarios />} />
-            <Route path="/galeria" element={<Galeria />} />
-            <Route path="/eventos-noticias" element={<EventosNoticias />} />
-            <Route path="/matriculas" element={<Matriculas />} />
-            <Route path="/contato" element={<Contato />} />
-          </Routes>
-        </Layout>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <ScrollToTop />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/quem-somos" element={<QuemSomos />} />
+          <Route path="/proposta-pedagogica" element={<PropostaPedagogica />} />
+          <Route path="/turmas-horarios" element={<TurmasHorarios />} />
+          <Route path="/galeria" element={<Galeria />} />
+          <Route path="/eventos-noticias" element={<EventosNoticias />} />
+          <Route path="/matriculas" element={<Matriculas />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
