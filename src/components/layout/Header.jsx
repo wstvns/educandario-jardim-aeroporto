@@ -105,7 +105,7 @@ const Header = () => {
           </nav>
 
           {/* button de matricula com detalhes */}
-          <div className="hidden lg:flex items-center">
+          <div className="hidden lg:flex items-center ml-4">
             <Button 
               asChild
               className="bg-red-500 hover:bg-red-600 text-white rounded-full px-6 py-5 text-xs font-black uppercase shadow-lg shadow-red-500/20 transition-all hover:scale-105 active:scale-95 border-b-4 border-red-700"
