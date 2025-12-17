@@ -58,7 +58,11 @@ const Matriculas = () => {
                 size="lg"
                 className="bg-red-500 text-white rounded-full px-10 py-5 text-lg font-bold hover:bg-red-600 hover:scale-95 transition-all duration-300 ease-out"
               >
-                <Link to="https://api.whatsapp.com/send/?phone=556593547420&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20matr%C3%ADcula%21&type=phone_number&app_absent=0">
+                <Link to="https://api.whatsapp.com/send/?phone=556593547420&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20matr%C3%ADcula%21&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center"
+                >
                   Faça sua Matrícula Agora
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
