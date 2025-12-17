@@ -8,8 +8,8 @@
     padding: 0;
   }
 
-  
-  main, section {
+  main,
+  section {
     background-color: transparent !important;
   }
 }
@@ -24,9 +24,23 @@
   }
 }
 
+/* esonde header com img aberta */
+body.modal-open .site-header {
+  display: none;
+}
+
+/* Bloqueia o scroll da page quando img esta aberta*/
+body.modal-open {
+  overflow: hidden;
+}
+
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(5deg); }
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(5deg);
+  }
 }
 
 .animate-float {

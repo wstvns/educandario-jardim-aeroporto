@@ -2,11 +2,23 @@ import { useState } from 'react';
 import { Camera, Play, X, ChevronLeft, ChevronRight, Sparkles, Star, Heart, Pencil } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useEffect } from 'react';
 
 const Galeria = () => {
   const [selectedCategory, setSelectedCategory] = useState('todos');
   const [selectedImage, setSelectedImage] = useState(null);
+  
+  useEffect(() => {
+  if (selectedImage) {
+    document.body.classList.add('modal-open');
+  } else {
+    document.body.classList.remove('modal-open');
+  }
 
+  return () => {
+    document.body.classList.remove('modal-open');
+  };
+}, [selectedImage]);
   const categories = [
     { id: 'todos', name: 'Todos', count: 24 },
     { id: 'atividades', name: 'Atividades Pedagógicas', count: 8 },
@@ -31,8 +43,8 @@ const Galeria = () => {
       category: 'recreacao',
       title: 'Brincadeira no Playground',
       description: 'Momento de diversão e desenvolvimento motor no parquinho',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      thumbnail: 'src/assets/sala-aula-infantil.jpg',
+      fullSize: 'src/assets/sala-aula-infantil.jpg'
     },
     {
       id: 3,
@@ -328,57 +340,61 @@ const Galeria = () => {
 
       {/* Modal de Visualização */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-5xl max-h-full">
-            {/* Botão Fechar */}
+        <div className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-4 backdrop-blur-sm">
+          {/* Fundo para fechar ao clicar fora da img*/}
+          <div className="absolute inset-0" onClick={closeModal} />
+
+          <div className="relative w-full max-w-4xl bg-white rounded-[2.5rem] overflow-hidden shadow-2xl z-10">
+            
+            {/*botao de fechar*/}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 z-10 bg-white/15 hover:bg-white/30 rounded-full p-2 text-white transition-colors duration-200 ease-out"
+              className="absolute top-5 right-5 z-50 bg-white/80 hover:bg-red-500 hover:text-white text-slate-900 rounded-full p-2 transition-all duration-200 shadow-lg backdrop-blur-md"
             >
               <X className="h-6 w-6" />
             </button>
-            
-            {/* Navegação */}
-            <button
-              onClick={prevImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/30 rounded-full p-2 text-white transition-colors duration-200 ease-out"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            
-            <button
-              onClick={nextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/30 rounded-full p-2 text-white transition-colors duration-200 ease-out"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-            
-            {/* Conteúdo */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-soft">
+
+            {/* container pra midia*/}
+            <div className="relative group">
               {selectedImage.type === 'video' ? (
-                <div className="aspect-video bg-gray-900 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <Play className="h-16 w-16 mx-auto mb-4" />
-                    <p className="text-lg">Vídeo: {selectedImage.title}</p>
-                    <p className="text-sm opacity-75">Duração: {selectedImage.duration}</p>
+                <div className="aspect-video bg-slate-900 flex items-center justify-center">
+                  <div className="text-center">
+                    <Play className="h-20 w-20 text-blue-500 mx-auto mb-4" />
+                    <p className="text-white font-bold">{selectedImage.title}</p>
                   </div>
                 </div>
               ) : (
                 <img
                   src={selectedImage.fullSize}
                   alt={selectedImage.title}
-                  className="max-w-full max-h-[70vh] object-contain"
+                  className="w-full max-h-[70vh] object-cover"
                 />
               )}
+
+              {/* Setinhas*/}
+              <button
+                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-2 backdrop-blur-sm transition-all"
+              >
+                <ChevronLeft className="h-8 w-8" />
+              </button>
               
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                  {selectedImage.title}
-                </h3>
-                <p className="text-slate-700">
-                  {selectedImage.description}
-                </p>
-              </div>
+              <button
+                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white rounded-full p-2 backdrop-blur-sm transition-all"
+              >
+                <ChevronRight className="h-8 w-8" />
+              </button>
+            </div>
+
+            {/* Infos da img*/}
+            <div className="p-8 bg-white">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">
+                {selectedImage.title}
+              </h3>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                {selectedImage.description}
+              </p>
             </div>
           </div>
         </div>
