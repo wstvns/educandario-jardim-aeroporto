@@ -12,7 +12,7 @@ export function FloatingContacts() {
         title="WhatsApp"
       >
         <MessageCircle className="h-6 w-6" />
-        <span className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-popover text-popover-foreground text-sm px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+        <span className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-slate-900 text-white text-sm px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
           Fale conosco no WhatsApp
         </span>
       </a>
