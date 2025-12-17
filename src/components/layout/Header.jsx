@@ -88,16 +88,20 @@ const Header = () => {
           </Link>
 
           {/* links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`px-4 py-2 rounded-full text-[11px] xl:text-xs font-black uppercase tracking-tighter transition-all duration-300 ${
-                  isActive(item.href)
+                className={`
+                  h-10 px-3 flex items-center justify-center text-center
+                  rounded-full text-[10px] xl:text-[12px] font-black uppercase 
+                  tracking-tighter leading-tight whitespace-nowrap transition-all duration-300
+                  ${isActive(item.href)
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-200'
                     : 'text-slate-800 hover:text-blue-600 hover:bg-white/60'
-                }`}
+                  }
+                `}
               >
                 {item.name}
               </Link>
