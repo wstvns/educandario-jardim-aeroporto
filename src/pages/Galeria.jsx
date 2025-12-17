@@ -20,11 +20,11 @@ const Galeria = () => {
   };
 }, [selectedImage]);
   const categories = [
-    { id: 'todos', name: 'Todos', count: 24 },
-    { id: 'atividades', name: 'Atividades Pedagógicas', count: 8 },
-    { id: 'recreacao', name: 'Recreação', count: 6 },
-    { id: 'eventos', name: 'Eventos Especiais', count: 5 },
-    { id: 'estrutura', name: 'Estrutura', count: 5 }
+    { id: 'todos', name: 'Todos', count: 12 },
+    { id: 'atividades', name: 'Atividades Pedagógicas', count: 4 },
+    { id: 'recreacao', name: 'Recreação', count: 3 },
+    { id: 'eventos', name: 'Eventos Especiais', count: 3 },
+    { id: 'estrutura', name: 'Estrutura', count: 2 }
   ];
 
   const galleryItems = [
@@ -34,8 +34,8 @@ const Galeria = () => {
       category: 'atividades',
       title: 'Atividade de Pintura',
       description: 'Crianças do Maternal II desenvolvendo a criatividade através da arte',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      thumbnail: 'image/pinturaPlaceHolder.png',
+      fullSize: 'image/pinturaPlaceHolder.png'
     },
     {
       id: 2,
@@ -43,8 +43,8 @@ const Galeria = () => {
       category: 'recreacao',
       title: 'Brincadeira no Playground',
       description: 'Momento de diversão e desenvolvimento motor no parquinho',
-      thumbnail: 'src/assets/sala-aula-infantil.jpg',
-      fullSize: 'src/assets/sala-aula-infantil.jpg'
+      thumbnail: 'image/playgroundPlaceHolder.png',
+      fullSize: 'image/playgroundPlaceHolder.png'
     },
     {
       id: 3,
@@ -52,8 +52,9 @@ const Galeria = () => {
       category: 'eventos',
       title: 'Festa Junina 2024',
       description: 'Apresentação das crianças na festa junina da escola',
-      thumbnail: '/api/placeholder/300/200',
-      duration: '2:30'
+      thumbnail: '/image/festaJuninaHolder.png',
+      video: '/videos/festaJuninaHolder.mp4',
+      duration: '2:00'
     },
     {
       id: 4,
@@ -61,17 +62,17 @@ const Galeria = () => {
       category: 'atividades',
       title: 'Aula de karatê',
       description: 'Desenvolvimento musical com instrumentos adaptados',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      thumbnail: 'image/karatePlaceHolder.png',
+      fullSize: 'image/karatePlaceHolder.png'
     },
     {
       id: 5,
       type: 'image',
       category: 'estrutura',
-      title: 'Sala do Berçário',
-      description: 'Ambiente acolhedor e seguro para os bebês',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      title: 'Horta Feliz',
+      description: 'Ambiente de aprendizado sobre plantas e sustentabilidade',
+      thumbnail: 'image/hortaFelizPlaceHolder.png',
+      fullSize: 'image/hortaFelizPlaceHolder.png'
     },
     {
       id: 6,
@@ -79,8 +80,8 @@ const Galeria = () => {
       category: 'atividades',
       title: 'Contação de Histórias',
       description: 'Momento mágico de leitura e imaginação',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      thumbnail: 'image/contandoHistoriasPlaceHolder.png',
+      fullSize: 'image/contandoHistoriasPlaceHolder.png'
     },
     {
       id: 7,
@@ -88,17 +89,17 @@ const Galeria = () => {
       category: 'recreacao',
       title: 'Educação Física',
       description: 'Desenvolvimento motor através de atividades lúdicas',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      thumbnail: 'image/educaoFisicaPlaceHolder.png',
+      fullSize: 'image/educaoFisicaPlaceHolder.png'
     },
     {
       id: 8,
-      type: 'video',
+      type: 'image',
       category: 'eventos',
       title: 'Formatura Pré II',
       description: 'Cerimônia de formatura dos pequenos',
-      thumbnail: '/api/placeholder/300/200',
-      duration: '5:15'
+      thumbnail: 'image/FormandosPlaceHolder.png',
+      fullSize: 'image/FormandosPlaceHolder.png'
     },
     {
       id: 9,
@@ -106,8 +107,8 @@ const Galeria = () => {
       category: 'estrutura',
       title: 'Refeitório',
       description: 'Espaço para refeições saudáveis e nutritivas',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      thumbnail: 'image/refeitorioPlaceHolder.png',
+      fullSize: 'image/refeitorioPlaceHolder.png'
     },
     {
       id: 10,
@@ -115,8 +116,8 @@ const Galeria = () => {
       category: 'atividades',
       title: 'Atividade de Ciências',
       description: 'Experimentos simples despertando a curiosidade',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      thumbnail: 'image/cienciaPlaceHolder.png',
+      fullSize: 'image/cienciaPlaceHolder.png'
     },
     {
       id: 11,
@@ -124,17 +125,17 @@ const Galeria = () => {
       category: 'recreacao',
       title: 'Brincadeira Livre',
       description: 'Momentos de socialização e diversão',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      thumbnail: 'image/brincadeiraLivrePlaceHolder.png',
+      fullSize: 'image/brincadeiraLivrePlaceHolder.png'
     },
     {
       id: 12,
       type: 'image',
       category: 'eventos',
-      title: 'Dia das Mães',
-      description: 'Celebração especial com as mamães',
-      thumbnail: '/api/placeholder/300/200',
-      fullSize: '/api/placeholder/800/600'
+      title: 'Dia das Crianças',
+      description: 'Celebração especial com os pequenos',
+      thumbnail: 'image/diaDasCriancas.png',
+      fullSize: 'image/diaDasCriancas.png'
     }
   ];
 
@@ -357,12 +358,14 @@ const Galeria = () => {
             {/* container pra midia*/}
             <div className="relative group">
               {selectedImage.type === 'video' ? (
-                <div className="aspect-video bg-slate-900 flex items-center justify-center">
-                  <div className="text-center">
-                    <Play className="h-20 w-20 text-blue-500 mx-auto mb-4" />
-                    <p className="text-white font-bold">{selectedImage.title}</p>
-                  </div>
-                </div>
+                <video
+                  controls
+                  autoPlay
+                  className="w-full max-h-[70vh] object-contain bg-black"
+                >
+                  <source src={selectedImage.video} type="video/mp4" />
+                  Seu navegador não suporta vídeo.
+                </video>
               ) : (
                 <img
                   src={selectedImage.fullSize}
