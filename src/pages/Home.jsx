@@ -132,8 +132,8 @@ const Home = () => {
             </div>
 
             <div className="relative lg:pl-8">
-              <div className="bg-white/40 backdrop-blur-xl rounded-[3rem] p-10 shadow-[0_30px_60px_-15px_rgba(180,160,100,0.2)] hover:shadow-[0_40px_80px_-15px_rgba(180,160,100,0.3)] hover:-translate-y-2 transition-all duration-300 ease-out border-2 border-white/80">
-                <div className="bg-white/30 backdrop-blur-md rounded-[3rem] p-8 text-center border-2 border-white/60">
+              <div className="border-2 border-white/80 border-t-4 border-t-blue-400/60 shadow-[0_30px_60px_-15px_rgba(180,160,100,0.2)] hover:shadow-[0_40px_80px_-15px_rgba(180,160,100,0.3)] hover:-translate-y-2 transition-all duration-300 ease-out bg-white rounded-[3rem]">
+                <div className="bg-white/30 backdrop-blur-md rounded-[3rem] p-8 text-center border-2 border-white/60 drop-shadow-lg">
                   <div className="w-32 h-32 flex items-center justify-center mx-auto mb-6">
                     <img src="/favicon.png" alt="Logo" className="w-full h-full object-cover drop-shadow-md" />
                   </div>
