@@ -685,7 +685,7 @@ const PropostaPedagogica = () => {
                 asChild
                 size="lg"
                 variant="secondary"
-                className="rounded-full px-10 py-3 text-md font-bold bg-white text-blue-700 hover:bg-blue-50 hover:scale-95 transition-all duration-300 ease-out"
+                className="rounded-full px-10 py-3 text-md font-bold bg-white text-blue-700 hover:bg-red-500 hover:text-white hover:scale-95 transition-all duration-300 ease-out"
               >
                 <Link to="/contato">Agende uma Visita</Link>
               </Button>
@@ -693,7 +693,7 @@ const PropostaPedagogica = () => {
                 asChild
                 variant="secondary"
                 size="lg"
-                className="rounded-full px-10 py-3 text-md font-bold bg-white text-blue-700 hover:bg-blue-50 hover:scale-95 transition-all duration-300 ease-out"
+                className="rounded-full px-10 py-3 text-md font-bold bg-white text-blue-700 hover:bg-green-500 hover:text-white hover:scale-95 transition-all duration-300 ease-out"
               >
                 <a
                   href="https://api.whatsapp.com/message/SREIOJFRZZA2O1?autoload=1&app_absent=0"

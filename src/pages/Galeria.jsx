@@ -424,7 +424,7 @@ const Galeria = () => {
             <Button 
               asChild
               size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-3 text-base sm:text-lg font-semibold shadow-md hover:shadow-lg transition-all duration-200 ease-out hover:-translate-y-0.5"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full px-8 py-3 text-base sm:text-lg font-semibold shadow-md hover:shadow-lg transition-all duration-200 ease-out hover:-translate-y-0.5"
             >
               <a 
                 href="https://www.instagram.com/educandariojardimaeroport/"
@@ -438,7 +438,7 @@ const Galeria = () => {
               asChild
               variant="outline"
               size="lg"
-              className="border-2 border-blue-600 text-blue-700 hover:bg-blue-50 rounded-full px-8 py-3 text-base sm:text-lg font-semibold transition-all duration-200 ease-out"
+              className="bg-gradient-to-r from-emerald-500 to-green-600 text-white border-none rounded-full px-8 py-3 text-base sm:text-lg font-semibold shadow-md hover:shadow-lg transition-all duration-200 ease-out hover:-translate-y-0.5"
             >
               <a 
                 href="https://api.whatsapp.com/message/SREIOJFRZZA2O1?autoload=1&app_absent=0"

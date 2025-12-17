@@ -287,7 +287,7 @@ const TurmasHorarios = () => {
                 asChild
                 size="lg"
                 variant="secondary"
-                className="rounded-full px-10 py-3 text-md font-bold bg-white text-blue-700 hover:bg-blue-50 hover:scale-95 transition-all duration-300 ease-out"
+                className="rounded-full px-10 py-3 text-md font-bold bg-white text-blue-700 hover:bg-red-500 hover:text-white hover:scale-95 transition-all duration-300 ease-out"
               >
                 <Link to="/contato">Agendar Visita</Link>
               </Button>
@@ -295,7 +295,7 @@ const TurmasHorarios = () => {
                 asChild
                 variant="secondary"
                 size="lg"
-                className="rounded-full px-10 py-3 text-md font-bold bg-white text-blue-700 hover:bg-blue-50 hover:scale-95 transition-all duration-300 ease-out"
+                className="rounded-full px-10 py-3 text-md font-bold bg-white text-blue-700 hover:bg-red-500 hover:text-white hover:scale-95 transition-all duration-300 ease-out"
               >
                 <a href="tel:+55659935474200">
                   <Phone className="mr-2 h-5 w-5" />
