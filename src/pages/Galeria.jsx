@@ -61,7 +61,7 @@ const Galeria = () => {
       type: 'image',
       category: 'atividades',
       title: 'Aula de karatê',
-      description: 'Desenvolvimento musical com instrumentos adaptados',
+      description: 'Introdução à arte marcial de forma lúdica, estimulando a coordenação e o respeito ao próximo',
       thumbnail: 'image/karatePlaceHolder.png',
       fullSize: 'image/karatePlaceHolder.png'
     },
