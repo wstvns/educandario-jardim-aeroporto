@@ -45,7 +45,7 @@ const Header = () => {
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
                 <a href="tel:+55659935474200" className="hover:text-blue-200 transition-colors">
-                  (65) 99354-7420     SITE EM DESENVOLVIMENTO
+                  (65) 99354-7420    🚧 Site em desenvolvimento — ajustes finais em andamento
                 </a>
               </div>
             </div>
