@@ -39,7 +39,7 @@ const QuemSomos = () => {
     {
       name: 'Elcy Rejane Pereira da Costa',
       role: 'Diretora Pedagógica',
-      education: 'Advocacia e Pedagogia',
+      education: 'Advocacia',
       experience: '15 anos de experiência',
       description: 'Apaixonada pela educação infantil, dedica-se a criar um ambiente acolhedor e estimulante.'
     },
@@ -488,7 +488,7 @@ const QuemSomos = () => {
                   Playground Seguro
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed">
-                  Área de recreação com brinquedos adequados e piso emborrachado
+                  Área de recreação com brinquedos adequados, piso emborrachado e área verde com bastante natureza
                 </p>
               </CardContent>
             </Card>
