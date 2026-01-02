@@ -2,7 +2,7 @@
 
 Website institucional desenvolvido em React para uma escola de educação infantil.
 
-> Projeto em desenvolvimento.
+> Projeto em desenvolvimento. Indo para ajustes finais e lançamento 
 
 ## Visão Geral
 
